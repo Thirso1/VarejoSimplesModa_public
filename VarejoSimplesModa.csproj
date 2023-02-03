@@ -1,0 +1,400 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{50249C4C-68A4-48F1-B324-A6C85A3BFC7A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>VarejoSimplesModa</RootNamespace>
+    <AssemblyName>VarejoSimplesModa</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FontAwesome.Sharp, Version=5.12.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\FontAwesome.Sharp.5.12.1\lib\net45\FontAwesome.Sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.9.10.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Padaria2\Padaria2\packages\MySql.Data.6.9.12\lib\net45\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Drawing.Primitives.4.3.0\lib\net45\System.Drawing.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Banco\Conect.cs" />
+    <Compile Include="Enums\DescricaoCrediario.cs" />
+    <Compile Include="Enums\FormaPagamento.cs" />
+    <Compile Include="Enums\StatusPedido.cs" />
+    <Compile Include="Enums\TipoConsultaFluxoCaixa.cs" />
+    <Compile Include="Enums\TiposForms.cs" />
+    <Compile Include="Enums\TiposMensagens.cs" />
+    <Compile Include="Enums\TiposMovimentacao.cs" />
+    <Compile Include="Enums\TipoUsuario.cs" />
+    <Compile Include="Impressao\Engine\NetworkEngine.cs" />
+    <Compile Include="Impressao\Engine\RawEngine.cs" />
+    <Compile Include="Impressao\Enums\Justifications.cs" />
+    <Compile Include="Impressao\Enums\PrinterModeState.cs" />
+    <Compile Include="Impressao\Enums\PrinterType.cs" />
+    <Compile Include="Impressao\Enums\ProtocolType.cs" />
+    <Compile Include="Impressao\Enums\QrCodeSize.cs" />
+    <Compile Include="Impressao\EscBemaCommands\Alignment.cs" />
+    <Compile Include="Impressao\EscBemaCommands\BarCode.cs" />
+    <Compile Include="Impressao\EscBemaCommands\Drawer.cs" />
+    <Compile Include="Impressao\EscBemaCommands\EscBema.cs" />
+    <Compile Include="Impressao\EscBemaCommands\FontMode.cs" />
+    <Compile Include="Impressao\EscBemaCommands\FontWidth.cs" />
+    <Compile Include="Impressao\EscBemaCommands\InitializePrint.cs" />
+    <Compile Include="Impressao\EscBemaCommands\PaperCut.cs" />
+    <Compile Include="Impressao\EscBemaCommands\QrCode.cs" />
+    <Compile Include="Impressao\EscDarumaCommands\Alignment.cs" />
+    <Compile Include="Impressao\EscDarumaCommands\BarCode.cs" />
+    <Compile Include="Impressao\EscDarumaCommands\Drawer.cs" />
+    <Compile Include="Impressao\EscDarumaCommands\EscDaruma.cs" />
+    <Compile Include="Impressao\EscDarumaCommands\FontMode.cs" />
+    <Compile Include="Impressao\EscDarumaCommands\FontWidth.cs" />
+    <Compile Include="Impressao\EscDarumaCommands\Image.cs" />
+    <Compile Include="Impressao\EscDarumaCommands\InitializePrint.cs" />
+    <Compile Include="Impressao\EscDarumaCommands\PaperCut.cs" />
+    <Compile Include="Impressao\EscDarumaCommands\QrCode.cs" />
+    <Compile Include="Impressao\EscPosCommands\Alignment.cs" />
+    <Compile Include="Impressao\EscPosCommands\BarCode.cs" />
+    <Compile Include="Impressao\EscPosCommands\Drawer.cs" />
+    <Compile Include="Impressao\EscPosCommands\EscPos.cs" />
+    <Compile Include="Impressao\EscPosCommands\FontMode.cs" />
+    <Compile Include="Impressao\EscPosCommands\FontWidth.cs" />
+    <Compile Include="Impressao\EscPosCommands\Image.cs" />
+    <Compile Include="Impressao\EscPosCommands\InitializePrint.cs" />
+    <Compile Include="Impressao\EscPosCommands\PaperCut.cs" />
+    <Compile Include="Impressao\EscPosCommands\QrCode.cs" />
+    <Compile Include="Impressao\Extencions\PrinterExtensions.cs" />
+    <Compile Include="Impressao\Interfaces\Command\IAlignment.cs" />
+    <Compile Include="Impressao\Interfaces\Command\IBarCode.cs" />
+    <Compile Include="Impressao\Interfaces\Command\IDrawer.cs" />
+    <Compile Include="Impressao\Interfaces\Command\IFontMode.cs" />
+    <Compile Include="Impressao\Interfaces\Command\IFontWidth.cs" />
+    <Compile Include="Impressao\Interfaces\Command\IImage.cs" />
+    <Compile Include="Impressao\Interfaces\Command\IInitializePrint.cs" />
+    <Compile Include="Impressao\Interfaces\Command\IPaperCut.cs" />
+    <Compile Include="Impressao\Interfaces\Command\IPrintCommand.cs" />
+    <Compile Include="Impressao\Interfaces\Command\IQrCode.cs" />
+    <Compile Include="Impressao\Interfaces\Engine\IEngine.cs" />
+    <Compile Include="Impressao\Interfaces\Printer\IPrinter.cs" />
+    <Compile Include="Impressao\Printer.cs" />
+    <Compile Include="Library\ConfiguraPortaCom.cs" />
+    <Compile Include="Library\Disposable.cs" />
+    <Compile Include="Library\FormataTxtProdutos.cs" />
+    <Compile Include="Library\FormataTxtSetor.cs" />
+    <Compile Include="Library\ImprimeVenda.cs" />
+    <Compile Include="Library\MascaraDecimal.cs" />
+    <Compile Include="Library\VerificaString.cs" />
+    <Compile Include="Library\WriteAllLines.cs" />
+    <Compile Include="Model\Caixa.cs" />
+    <Compile Include="Model\Categoria.cs" />
+    <Compile Include="Model\Cliente.cs" />
+    <Compile Include="Model\Crediario.cs" />
+    <Compile Include="Model\Empresa.cs" />
+    <Compile Include="Model\FluxoCaixa.cs" />
+    <Compile Include="Model\ImagemProduto.cs" />
+    <Compile Include="Model\ItemPedido.cs" />
+    <Compile Include="Model\ItemRapido.cs" />
+    <Compile Include="Model\Login.cs" />
+    <Compile Include="Model\MudaCorTextBox.cs" />
+    <Compile Include="Model\MudaParaMaiuscula.cs" />
+    <Compile Include="Model\Pedido.cs" />
+    <Compile Include="Model\Produto.cs" />
+    <Compile Include="Model\Usuario.cs" />
+    <Compile Include="Model\ValidaCpfCnpj.cs" />
+    <Compile Include="Pagamento\FinalizaPedido.cs" />
+    <Compile Include="Pdv.cs" />
+    <Compile Include="Pdv.designer.cs">
+      <DependentUpon>Pdv.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Principal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Principal.Designer.cs">
+      <DependentUpon>Principal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\CaixaRepository.cs" />
+    <Compile Include="Repository\ClienteRepository.cs" />
+    <Compile Include="Repository\CrediarioRepository.cs" />
+    <Compile Include="Repository\FluxoCaixaRepository.cs" />
+    <Compile Include="Repository\ItemPedidoRepository.cs" />
+    <Compile Include="Repository\ItemRapidoRepository.cs" />
+    <Compile Include="Repository\PedidoRepository.cs" />
+    <Compile Include="Repository\ProdutoRepository.cs" />
+    <Compile Include="Repository\RepositoryInterfaces\ICaixaRepository.cs" />
+    <Compile Include="Repository\RepositoryInterfaces\IClienteRepository.cs" />
+    <Compile Include="Repository\RepositoryInterfaces\ICrediarioRepository.cs" />
+    <Compile Include="Repository\RepositoryInterfaces\IEmpresaRepository.cs" />
+    <Compile Include="Repository\RepositoryInterfaces\IFluxoCaixaRepository.cs" />
+    <Compile Include="Repository\RepositoryInterfaces\IItemPedidoRepository.cs" />
+    <Compile Include="Repository\RepositoryInterfaces\IItemRapidoRepository.cs" />
+    <Compile Include="Repository\RepositoryInterfaces\IPedidoRepository.cs" />
+    <Compile Include="Repository\RepositoryInterfaces\IProdutoRepository.cs" />
+    <Compile Include="Repository\RepositoryInterfaces\IUsuarioRepository.cs" />
+    <Compile Include="Repository\UsuarioRepository.cs" />
+    <Compile Include="View\FrmAberturaCaixa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmAberturaCaixa.Designer.cs">
+      <DependentUpon>FrmAberturaCaixa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmCadastroCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmCadastroCliente.designer.cs">
+      <DependentUpon>FrmCadastroCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmCadastroEmpresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmCadastroEmpresa.designer.cs">
+      <DependentUpon>FrmCadastroEmpresa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmCadastroProdutos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmCadastroProdutos.designer.cs">
+      <DependentUpon>FrmCadastroProdutos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmCadastroUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmCadastroUsuarios.designer.cs">
+      <DependentUpon>FrmCadastroUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmConsultaCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmConsultaCliente.designer.cs">
+      <DependentUpon>FrmConsultaCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmConsultaProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmConsultaProduto.designer.cs">
+      <DependentUpon>FrmConsultaProduto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmCrediarioCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmCrediarioCliente.designer.cs">
+      <DependentUpon>FrmCrediarioCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmDetalhesFluxoCaixa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmDetalhesFluxoCaixa.designer.cs">
+      <DependentUpon>FrmDetalhesFluxoCaixa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmDetalhesRelatorioVendas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmDetalhesRelatorioVendas.designer.cs">
+      <DependentUpon>FrmDetalhesRelatorioVendas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmDetalhesVenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmDetalhesVenda.designer.cs">
+      <DependentUpon>FrmDetalhesVenda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmFechamentoCaixa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmFechamentoCaixa.designer.cs">
+      <DependentUpon>FrmFechamentoCaixa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmLogin.designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmMensagens.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmMensagens.designer.cs">
+      <DependentUpon>FrmMensagens.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmRelatorioVendas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmRelatorioVendas.designer.cs">
+      <DependentUpon>FrmRelatorioVendas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmRetirada.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmRetirada.designer.cs">
+      <DependentUpon>FrmRetirada.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmStatusCaixa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmStatusCaixa.designer.cs">
+      <DependentUpon>FrmStatusCaixa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmSuprimento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmSuprimento.designer.cs">
+      <DependentUpon>FrmSuprimento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmTroco.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmTroco.designer.cs">
+      <DependentUpon>FrmTroco.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmValorDiverso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmValorDiverso.designer.cs">
+      <DependentUpon>FrmValorDiverso.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Pdv.resx">
+      <DependentUpon>Pdv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Principal.resx">
+      <DependentUpon>Principal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="View\FrmAberturaCaixa.resx">
+      <DependentUpon>FrmAberturaCaixa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmCadastroCliente.resx">
+      <DependentUpon>FrmCadastroCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmCadastroEmpresa.resx">
+      <DependentUpon>FrmCadastroEmpresa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmCadastroProdutos.resx">
+      <DependentUpon>FrmCadastroProdutos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmCadastroUsuarios.resx">
+      <DependentUpon>FrmCadastroUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmConsultaCliente.resx">
+      <DependentUpon>FrmConsultaCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmConsultaProduto.resx">
+      <DependentUpon>FrmConsultaProduto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmCrediarioCliente.resx">
+      <DependentUpon>FrmCrediarioCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmDetalhesFluxoCaixa.resx">
+      <DependentUpon>FrmDetalhesFluxoCaixa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmDetalhesRelatorioVendas.resx">
+      <DependentUpon>FrmDetalhesRelatorioVendas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmDetalhesVenda.resx">
+      <DependentUpon>FrmDetalhesVenda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmFechamentoCaixa.resx">
+      <DependentUpon>FrmFechamentoCaixa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmMensagens.resx">
+      <DependentUpon>FrmMensagens.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmRelatorioVendas.resx">
+      <DependentUpon>FrmRelatorioVendas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmRetirada.resx">
+      <DependentUpon>FrmRetirada.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmStatusCaixa.resx">
+      <DependentUpon>FrmStatusCaixa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmSuprimento.resx">
+      <DependentUpon>FrmSuprimento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmTroco.resx">
+      <DependentUpon>FrmTroco.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmValorDiverso.resx">
+      <DependentUpon>FrmValorDiverso.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\card_borda_azul.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\card_borda_vermelha.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\card_borda_amarela.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\card_verde_claro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\card_borda_verde.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30413.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VarejoSimplesModa", "VarejoSimplesModa.csproj", "{50249C4C-68A4-48F1-B324-A6C85A3BFC7A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{50249C4C-68A4-48F1-B324-A6C85A3BFC7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50249C4C-68A4-48F1-B324-A6C85A3BFC7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50249C4C-68A4-48F1-B324-A6C85A3BFC7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50249C4C-68A4-48F1-B324-A6C85A3BFC7A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {13C376A4-BF37-46AE-A1EB-72673A853C37}
+	EndGlobalSection
+EndGlobal
